@@ -29,7 +29,7 @@ activate(GtkApplication* app, gpointer profiles)
     {
         GtkCssProvider* css_provider = gtk_css_provider_new();
         gtk_css_provider_load_from_string(css_provider,
-            ".window { font-family: Futura; background: linear-gradient(-60deg, #313236 0%, #40393e 100%); }");
+            ".window { font-family: Futura; background: linear-gradient(-60deg, #265729 0%, #1e3159 100%); }");
         gtk_style_context_add_provider_for_display(gtk_widget_get_display(window),
             (GtkStyleProvider*)css_provider, GTK_STYLE_PROVIDER_PRIORITY_USER);
         gtk_widget_add_css_class(window, "window");
@@ -63,7 +63,10 @@ activate(GtkApplication* app, gpointer profiles)
 
         {
             GtkCssProvider* css_provider = gtk_css_provider_new();
-            gtk_css_provider_load_from_string(css_provider, ".button { opacity: 0.756; color: #fff; font-size: 16pt; }");
+            gtk_css_provider_load_from_string(
+                css_provider, 
+                ".button { opacity: 0.756; color: #fff; font-size: 16pt; background: #00000020; } .button:hover {background: #00000040;}"
+            );
             gtk_style_context_add_provider_for_display(gtk_widget_get_display(button),
                 (GtkStyleProvider*)css_provider, GTK_STYLE_PROVIDER_PRIORITY_USER);
             gtk_widget_add_css_class(button, "button");
