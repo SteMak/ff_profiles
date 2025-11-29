@@ -97,6 +97,8 @@ activate(GtkApplication* app, gpointer profiles)
             gtk_widget_add_css_class(image, "image");
         }
 
+        gtk_image_set_pixel_size(GTK_IMAGE(image), 200);
+
         gtk_box_append(GTK_BOX(inner_box), image);
         gtk_widget_set_margin_bottom(image, 5);
         gtk_widget_set_size_request(image, 200, 200);
